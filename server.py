@@ -26,7 +26,7 @@ def data(mnth):
             })
         weeks.append(week)
     ret = {
-        "month-name":first.strftime("%B"),
+        "month-name":first.strftime("%B"),            #dynamic date
         "month-year":f"{yr}",
         "weeks":weeks
     }
@@ -34,6 +34,6 @@ def data(mnth):
 
 @app.route("/day/<date>")
 def date(date):
-    return {"availability":[x for x in all if x['whn'].startswith(date)]}
+    return {"availability":[x for x in all if x['whn'].startswith(date)]}      #return available seat with its date
 
-app.run(debug=True, port=5959)
+app.run(debug=True, port=5999)
