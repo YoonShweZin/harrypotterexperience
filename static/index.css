@@ -1,6 +1,6 @@
 #calendar{
     background-color: whitesmoke;
-    padding: 1ex;
+    padding: 2ex;
     margin: auto;
     width: 800px;
 }
@@ -8,20 +8,20 @@
 #DATE{
     font-size: 25px;
     font-family: sans-serif;
-    margin-bottom: 25px;
+    margin-bottom: 35px;
 }
 
 #month-view{
     width: 400px;
     background-color:white;
-    padding: 1ex;
-    border-radius: 1ex;
-    
+    border-radius: 1ex;  
 }
 
 #m{
     font-size: 18px;
     font-family: sans-serif;
+    padding-top: 10px;
+    text-align: center;
 }
 
 #month-view div div{                     /* get two div  */
@@ -59,4 +59,3 @@
     font-family: sans-serif;
     font-size: 12px;
 }
-
