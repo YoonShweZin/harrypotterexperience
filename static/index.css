@@ -1,0 +1,30 @@
+.bad-day{
+    color:red;
+}
+
+#plan td{
+    cursor:pointer;
+    background-color:aquamarine;
+    text-align: center;
+}
+#plan td:hover{
+    background-color:pink;
+}
+
+#calendar{
+    background-color:rgb(244,244,244);
+    padding:1ex;
+}
+#month-view{
+    background-color:white;
+    padding:1ex;
+    border-radius:1ex;
+}
+#month-view div div{
+    display:inline-block;
+}
+#prev, #next{
+    margin-left:2ex;
+    margin-right:2ex;
+    cursor:pointer;
+}
