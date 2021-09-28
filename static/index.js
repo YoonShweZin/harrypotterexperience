@@ -47,7 +47,7 @@ function fillCalendarWithMonth(year,month)
                        .then(r=>r.json())
                        .then(r=>{
                            let div = document.createElement('div');
-                           div.innerHTML = JSON.stringify(r);
+                           div.innerHTML = JSON.stringify(r);       //convert js object into JSON file
                            document.getElementById('day').append(div);
                        })
                 }
@@ -57,6 +57,12 @@ function fillCalendarWithMonth(year,month)
             }
             document.getElementById('plan').append(tr);             //add all the rows into div called plan
         }
+            //for right div time available and select
+
+            document.getElementById('mn').innerText = r['month-name'];
+            document.getElementById('yn').innerText = r['month-year'];
+            document.getElementById('te').innerText = day.whn.split('-')[2];
+
     })
 }
 

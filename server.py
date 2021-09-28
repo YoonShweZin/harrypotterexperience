@@ -13,7 +13,7 @@ def index():
 def data(mnth):
     [yr,mn] = mnth.split('-')
     first = datetime(year=int(yr),month=int(mn),day=1)
-    dopm = first - timedelta(days = first.weekday())
+    dopm = first - timedelta(days = first.weekday())      #predict past date
     print(dopm)
     weeks = []
     for w in range(5):
