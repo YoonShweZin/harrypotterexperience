@@ -62,6 +62,38 @@
     text-align: center;
 }
 
+.color{
+    padding: 0px;
+    margin-left: 35px;
+}
+.color li{
+    list-style: square;
+}
+
+.color ul{
+    display: inline;
+    float: left;
+}
+
+li{
+    font-size: 36px;
+}
+#available {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+    color: rgb(17, 113, 138);
+}
+
+#sold-out{
+    color: gray;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+}
+#selected{
+    color:rgb(33, 192, 231) ;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+} 
 #asdiv{
     width: auto;
     background-color: hotpink;
