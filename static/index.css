@@ -14,13 +14,12 @@
 #month-view{
     width: 500px;
     background-color:white;
-    border-radius: 1ex; 
     float: left;
 }
 
 #m{
     font-size: 18px;
-    font-family: sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     text-align: center;
 }
 
@@ -43,21 +42,22 @@
     width: 50px;
     height: 60px;
     cursor: pointer;
-    background-color: rgb(8, 56, 97);
-    color: white;
+    background-color: rgb(17, 113, 138);
+    color: black;
     text-align: center;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: bold;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'Times New Roman', Times, serif;
     border:2px solid white;
 }
 
 #plan td:hover{
     background-color: black;
+    color: white;
 }
 
 #plan th{
-    font-family: sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     font-size: 12px;
     text-align: center;
 }
