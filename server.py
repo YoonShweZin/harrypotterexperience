@@ -36,4 +36,4 @@ def data(mnth):
 def date(date):
     return {"availability":[x for x in all if x['whn'].startswith(date)]}      #return available seat with its date
 
-app.run(debug=True, port=5999)
+app.run(debug=True, port=5568)

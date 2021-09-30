@@ -15,10 +15,15 @@ function fillCalendarWithMonth(year,month)
             }
         };
 
-        document.getElementById('prev').onclick = ()=>{                       //to go previous month with this <
-            //What should we do if month == 1
-            fillCalendarWithMonth(year,month-1);
-        };
+        document.getElementById('prev').onclick = ()=>{
+            if (month>12){                                                   //if month is greater then 12
+                fillCalendarWithMonth(year,month-1);                         //substract from month
+            }else if (month == 1){                                           //if the month is equal to 1 (January)
+                fillCalendarWithMonth(year-1,12);                            // go to previous year                         
+            }else{                                           
+                fillCalendarWithMonth (year, --month);
+            }
+        }
 
         document.querySelectorAll('tr').forEach(tr=>{tr.remove()});           //remove all of the month before before creating a new one
         document.getElementById('plan').innerHTML = `
@@ -50,6 +55,7 @@ function fillCalendarWithMonth(year,month)
                            div.innerHTML = JSON.stringify(r);       //convert js object into JSON file
                            document.getElementById('day').append(div);
                        })
+                    document.getElementById('te').innerText = day.whn.split('-')[2];
                 }
 
                 tr.append(td);                                       //add cells(td) into rows(tr)
@@ -61,7 +67,6 @@ function fillCalendarWithMonth(year,month)
 
             document.getElementById('mn').innerText = r['month-name'];
             document.getElementById('yn').innerText = r['month-year'];
-            document.getElementById('te').innerText = day.whn.split('-')[2];
 
     })
 }
