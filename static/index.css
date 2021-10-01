@@ -90,14 +90,12 @@ li{
     font-size: 25px;
 }
 #selected{
-    color:rgb(33, 192, 231) ;
+    color:rgb(21, 159, 194);
     font-family: 'Times New Roman', Times, serif;
     font-size: 25px;
 } 
 #asdiv{
     width: auto;
-    background-color: hotpink;
-    float: right;
     margin-left: 3ex;
 }
 
@@ -106,4 +104,41 @@ li{
     font-family:'Times New Roman', Times, serif;
     text-align: left;
     font-weight: bold;
+}
+
+#times{
+    width: auto;
+    padding: 0px;
+    margin: 0px;
+    margin-top: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+}
+
+.timetd {
+    width: 150px;
+    padding-bottom: 25px;
+    /* background-color: cornflowerblue; */
+}
+
+.timetd2 {
+    width: 200px;
+    padding-bottom: 25px;
+    color: rgb(17, 113, 138);
+    /* background-color: darkorange; */
+}
+
+.selc{
+    width: 150px;
+    height: 38px;
+    background-color:rgb(17, 113, 138);
+    color: white;
+    border-color: 1px black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.selc:hover{
+    /* background-color: black;
+    color: white; */
+    opacity: 0.6;
+    color: black; 
 }

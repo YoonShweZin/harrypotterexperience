@@ -34,6 +34,7 @@ def data(mnth):
 
 @app.route("/day/<date>")
 def date(date):
-    return {"availability":[x for x in all if x['whn'].startswith(date)]}      #return available seat with its date
+    t_slot = [x for x in all if x['whn'].startswith(date)]
+    return {"availability":t_slot}      #return available seat with its date
 
 app.run(debug=True, port=5568)

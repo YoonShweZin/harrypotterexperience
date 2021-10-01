@@ -28,13 +28,13 @@ function fillCalendarWithMonth(year,month)
         document.querySelectorAll('tr').forEach(tr=>{tr.remove()});           //remove all of the month before before creating a new one
         document.getElementById('plan').innerHTML = `
             <tr>                         <!-- tr row -->
-                <th>MO</th>              <!-- th cell header -->
-                <th>TU</th>
-                <th>WE</th>
-                <th>TH</th>
-                <th>FR</th>
-                <th>SA</th>
-                <th>SU</th>
+                <th>MON</th>              <!-- th cell header -->
+                <th>TUE</th>
+                <th>WED</th>
+                <th>THU</th>
+                <th>FRI</th>
+                <th>SAT</th>
+                <th>SUN</th>
             </tr>`;
 
         for(let w of r.weeks){                                                 //loop to get weeks 
@@ -54,6 +54,30 @@ function fillCalendarWithMonth(year,month)
                            let div = document.createElement('div');
                            div.innerHTML = JSON.stringify(r);       //convert js object into JSON file
                            document.getElementById('day').append(div);
+
+                           document.getElementById('times').innerHTML="";
+
+                           //create cells time available select table in right side
+                           for(let val=0; val<r.availability.length; val++){
+                            let timetr = document.createElement('tr');
+                            let timetd = document.createElement('td');
+                            let timetd2 = document.createElement('td');
+                            let selc = document.createElement('button');
+            
+                            timetd.innerHTML = r.availability[val]["whn"].split("T")[1];   //get available times
+                            timetd2.innerText = 'AVAILABLE';
+                            selc.innerText = 'SELECT';
+
+                            //to design things in css assign class
+                            timetd.classList.add('timetd');
+                            timetd2.classList.add('timetd2');
+                            selc.classList.add('selc');
+
+                            timetr.append(timetd);
+                            timetr.append(timetd2);
+                            timetr.append(selc);
+                            document.getElementById('times').appendChild(timetr); 
+                        }; 
                        })
                     //for right div time available and select
                     document.getElementById('day-date').innerHTML = `${new Date(day.whn).toUTCString().slice(0,16)}`;
