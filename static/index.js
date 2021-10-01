@@ -55,7 +55,8 @@ function fillCalendarWithMonth(year,month)
                            div.innerHTML = JSON.stringify(r);       //convert js object into JSON file
                            document.getElementById('day').append(div);
                        })
-                    document.getElementById('te').innerText = day.whn.split('-')[2];
+                    //for right div time available and select
+                    document.getElementById('day-date').innerHTML = `${new Date(day.whn).toUTCString().slice(0,16)}`;
                 }
 
                 tr.append(td);                                       //add cells(td) into rows(tr)
@@ -63,11 +64,6 @@ function fillCalendarWithMonth(year,month)
             }
             document.getElementById('plan').append(tr);             //add all the rows into div called plan
         }
-            //for right div time available and select
-
-            document.getElementById('mn').innerText = r['month-name'];
-            document.getElementById('yn').innerText = r['month-year'];
-
     })
 }
 

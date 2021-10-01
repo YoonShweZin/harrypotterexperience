@@ -101,9 +101,9 @@ li{
     margin-left: 3ex;
 }
 
-#a{
-    font-size: 18px;
-    font-family: sans-serif;
+#day-date{
+    font-size: 25px;
+    font-family:'Times New Roman', Times, serif;
     text-align: left;
     font-weight: bold;
 }
