@@ -29,8 +29,8 @@
 
 #prev, #next{
     font-weight: bolder;
-    margin-left: 2ex;
-    margin-right: 2ex;
+    margin-left: 9ex;
+    margin-right: 9ex;
     cursor: pointer;
 }
 
@@ -85,7 +85,7 @@ li{
 }
 
 #sold-out{
-    color: gray;
+    color: rgb(178,190,181);
     font-family: 'Times New Roman', Times, serif;
     font-size: 25px;
 }
@@ -99,7 +99,14 @@ li{
     margin-left: 3ex;
 }
 
-#day-date{
+/* #day-date{
+    font-size: 25px;
+    font-family:'Times New Roman', Times, serif;
+    text-align: left;
+    font-weight: bold;
+} */
+
+#a{
     font-size: 25px;
     font-family:'Times New Roman', Times, serif;
     text-align: left;
@@ -141,4 +148,9 @@ li{
     color: white; */
     opacity: 0.6;
     color: black; 
+}
+
+.sold{
+    background-color: rgb(178,190,181) !important;
+    pointer-events: none;
 }

@@ -40,10 +40,16 @@ function fillCalendarWithMonth(year,month)
         for(let w of r.weeks){                                                 //loop to get weeks 
             let tr = document.createElement('tr');                             //create tr table rows
             for (let day of w){                                                //loop weeks to get days
+                 //td.innerText = JSON.stringify(day);
                 let td = document.createElement('td');                         //create td cells 
                 td.innerText = day.whn.split('-')[2];                          //split froms whn position 2 to get days like 1 ,2 etc..
                 if (day.whn.split('-')[2] === '05'){                           // slit form whn position 2 to get every day 5
-                    td.classList.add('bad-day');                               //and let it as bad day 
+                    td.classList.add('bad-day');                               //and let the class name as bad day 
+                }
+
+                if(day.free == 0)                                              //if the free seat is 0
+                {
+                    td.classList.add('sold');                                  //give a class name sold to use in css
                 }
 
                 td.onclick = ()=>{
@@ -79,8 +85,13 @@ function fillCalendarWithMonth(year,month)
                             document.getElementById('times').appendChild(timetr); 
                         }; 
                        })
-                    //for right div time available and select
-                    document.getElementById('day-date').innerHTML = `${new Date(day.whn).toUTCString().slice(0,16)}`;
+
+                    //for right div time available and select                   
+                    document.getElementById('da').innerHTML = `${new Date(day.whn).toUTCString().slice(0,3)}`   //day in right side div
+                    document.getElementById('mn').innerText = r['month-name'];
+                    document.getElementById('te').innerText = day.whn.split('-')[2];   //date beside month in right side div
+                    document.getElementById('yn').innerText = r['month-year']; 
+                    //document.getElementById('day-date').innerHTML = `${new Date(day.whn).toUTCString().slice(0,16)}`; //for date eg. Tue, 19 Oct 2021
                 }
 
                 tr.append(td);                                       //add cells(td) into rows(tr)
