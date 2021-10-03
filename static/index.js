@@ -47,10 +47,18 @@ function fillCalendarWithMonth(year,month)
                 //    td.classList.add('bad-day');                               //and let the class name as bad day 
                 //}
 
+                //show free seats 
                 if(day.free == 0)                                              //if the free seat is 0
                 {
                     td.classList.add('sold');                                  //give a class name sold to use in css
                 }
+
+                //dim months which are unrelated to viewing months
+                if (day.whn.split('-')[1] != month)                      //dim unrelated months
+                {
+                    td.classList.add('dim-unrelated-month');
+                }
+
 
                 td.onclick = ()=>{
                     document.getElementById('day').innerHTML = `Day ${day.whn}`;
@@ -64,15 +72,15 @@ function fillCalendarWithMonth(year,month)
                             //show the selected seat
                             if (day.free !==0 )                                      //if free seats are not zero 
                             {
-                                let ava = document.querySelector('.arr-selected');
+                                let ava = document.querySelector('.arr-selected');  //select css class 
                                 if(ava){
-                                    ava.classList.remove('arr-selected');
+                                    ava.classList.remove('arr-selected');          
                                 };
-                                td.classList.add('arr-selected'); 
+                                td.classList.add('arr-selected');                 //create class to use in css
                             }
                         
                            document.getElementById('times').innerHTML="";
-                           //create cells time available select table in right side
+                           //create table cells (time available select) in right side
                            for(let val=0; val<r.availability.length; val++){
                             let timetr = document.createElement('tr');
                             let timetd = document.createElement('td');

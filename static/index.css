@@ -159,3 +159,7 @@ li::marker{
 .arr-selected{
     background-color: #D4B996FF !important;
 }
+
+.dim-unrelated-month{
+    background-color: #908A83 !important;  
+}
