@@ -21,6 +21,7 @@
     font-size: 18px;
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
+    font-weight: bold;
 }
 
 #month-view span span{                     /* get two div  */
@@ -34,16 +35,15 @@
     cursor: pointer;
 }
 
-.bad-day{
-    color : red !important;
-}
+/* .bad-day{
+    color : #761217 !important;
+} */
 
 #plan td{
     width: 50px;
     height: 60px;
     cursor: pointer;
-    background-color: rgb(17, 113, 138);
-    color: black;
+    background-color: #a07855FF;
     text-align: center;
     font-size: 18px;
     font-weight: bold;
@@ -52,8 +52,7 @@
 }
 
 #plan td:hover{
-    background-color: black;
-    color: white;
+    background-color: #D4B996FF
 }
 
 #plan th{
@@ -64,7 +63,7 @@
 
 .color{
     padding: 0px;
-    margin-left: 35px;
+    margin-left: 30px;
 }
 .color li{
     list-style: square;
@@ -75,28 +74,31 @@
     float: left;
 }
 
-li{
-    font-size: 36px;
+li::marker{
+    font-size: 1.2em;
 }
+
 #available {
     font-family: 'Times New Roman', Times, serif;
     font-size: 25px;
-    color: rgb(17, 113, 138);
+    color: #a07855FF;
 }
 
 #sold-out{
-    color: rgb(178,190,181);
+    color: #dbd7d2;
     font-family: 'Times New Roman', Times, serif;
     font-size: 25px;
 }
 #selected{
-    color:rgb(21, 159, 194);
+    color: #D4B996FF;
     font-family: 'Times New Roman', Times, serif;
     font-size: 25px;
 } 
 #asdiv{
     width: auto;
     margin-left: 3ex;
+    height: 447px;
+    overflow-y: scroll;
 }
 
 /* #day-date{
@@ -131,26 +133,29 @@ li{
 .timetd2 {
     width: 200px;
     padding-bottom: 25px;
-    color: rgb(17, 113, 138);
+    color: #a07855FF;
+    font-weight: bold;
     /* background-color: darkorange; */
 }
 
 .selc{
     width: 150px;
     height: 38px;
-    background-color:rgb(17, 113, 138);
-    color: white;
-    border-color: 1px black;
+    background-color:#a07855FF;
+    border-color: black;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .selc:hover{
     /* background-color: black;
     color: white; */
     opacity: 0.6;
-    color: black; 
 }
 
 .sold{
-    background-color: rgb(178,190,181) !important;
+    background-color: #dbd7d2 !important;
     pointer-events: none;
+}
+
+.arr-selected{
+    background-color: #D4B996FF !important;
 }

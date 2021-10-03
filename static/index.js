@@ -43,9 +43,9 @@ function fillCalendarWithMonth(year,month)
                  //td.innerText = JSON.stringify(day);
                 let td = document.createElement('td');                         //create td cells 
                 td.innerText = day.whn.split('-')[2];                          //split froms whn position 2 to get days like 1 ,2 etc..
-                if (day.whn.split('-')[2] === '05'){                           // slit form whn position 2 to get every day 5
-                    td.classList.add('bad-day');                               //and let the class name as bad day 
-                }
+                //if (day.whn.split('-')[2] === '05'){                           // slit form whn position 2 to get every day 5
+                //    td.classList.add('bad-day');                               //and let the class name as bad day 
+                //}
 
                 if(day.free == 0)                                              //if the free seat is 0
                 {
@@ -61,8 +61,17 @@ function fillCalendarWithMonth(year,month)
                            div.innerHTML = JSON.stringify(r);       //convert js object into JSON file
                            document.getElementById('day').append(div);
 
+                            //show the selected seat
+                            if (day.free !==0 )                                      //if free seats are not zero 
+                            {
+                                let ava = document.querySelector('.arr-selected');
+                                if(ava){
+                                    ava.classList.remove('arr-selected');
+                                };
+                                td.classList.add('arr-selected'); 
+                            }
+                        
                            document.getElementById('times').innerHTML="";
-
                            //create cells time available select table in right side
                            for(let val=0; val<r.availability.length; val++){
                             let timetr = document.createElement('tr');
