@@ -15,6 +15,8 @@
     width: 500px;
     background-color:white;
     float: left;
+    margin-left: 45px;
+    margin-bottom: 80px;
 }
 
 #m{
@@ -62,15 +64,14 @@
 }
 
 .color{
-    padding: 0px;
-    margin-left: 30px;
+    margin-left: 15px;
 }
 .color li{
     list-style: square;
 }
 
 .color ul{
-    display: inline;
+    /* display: inline; */
     float: left;
 }
 
@@ -82,23 +83,27 @@ li::marker{
     font-family: 'Times New Roman', Times, serif;
     font-size: 25px;
     color: #a07855FF;
+    padding-right: 18px;
 }
 
 #sold-out{
     color: #dbd7d2;
     font-family: 'Times New Roman', Times, serif;
     font-size: 25px;
+    padding-right: 18px;
 }
 #selected{
     color: #D4B996FF;
     font-family: 'Times New Roman', Times, serif;
     font-size: 25px;
-} 
+}
+
+
 #asdiv{
     width: auto;
-    margin-left: 3ex;
-    height: 447px;
-    overflow-y: scroll;
+    float: left;
+    margin-left: 30px;
+    margin-bottom: 80px;
 }
 
 /* #day-date{
@@ -117,22 +122,27 @@ li::marker{
 
 #times{
     width: auto;
+    height: 380px;
+    overflow-y: scroll;
+    scrollbar-color: #dbd7d2 whitesmoke;
+    scrollbar-width: thin;
     padding: 0px;
     margin: 0px;
     margin-top: 30px;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 18px;
+    font-size: 20px;
+
 }
 
 .timetd {
     width: 150px;
-    padding-bottom: 25px;
+    padding-bottom: 30px;
     /* background-color: cornflowerblue; */
 }
 
 .timetd2 {
     width: 200px;
-    padding-bottom: 25px;
+    padding-bottom: 30px;
     color: #a07855FF;
     font-weight: bold;
     /* background-color: darkorange; */
@@ -140,8 +150,9 @@ li::marker{
 
 .selc{
     width: 150px;
-    height: 38px;
+    height: 42px;
     background-color:#a07855FF;
+    margin-right: 40px;
     border-color: black;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -155,11 +166,43 @@ li::marker{
     background-color: #dbd7d2 !important;
     pointer-events: none;
 }
-
 .arr-selected{
     background-color: #D4B996FF !important;
 }
-
 .dim-unrelated-month{
     background-color: #908A83 !important;  
+}
+
+.box{
+    width: 500px;
+    /* background-color: thistle; */
+    margin-left: 46px;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    float: left;
+    position: absolute;
+    bottom: 0;
+}
+
+#adult{
+    font-size: 15px;
+    /* margin-left: 10px; */
+}
+#child{
+    font-size: 15px;
+    /* margin-left: 10px; */
+}
+
+input{
+    padding: 7px 10px;
+    margin: 4px 0;
+    box-sizing: border-box;
+    border: 2px solid #dbd7d2;
+    border-radius: 4px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+input[type=text]:focus {
+    border: 2px solid #D4B996FF;
 }

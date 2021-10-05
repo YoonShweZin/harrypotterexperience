@@ -23,7 +23,7 @@ function fillCalendarWithMonth(year,month)
             }else{                                           
                 fillCalendarWithMonth (year, --month);
             }
-        }
+        };
 
         document.querySelectorAll('tr').forEach(tr=>{tr.remove()});           //remove all of the month before before creating a new one
         document.getElementById('plan').innerHTML = `
@@ -61,13 +61,13 @@ function fillCalendarWithMonth(year,month)
 
 
                 td.onclick = ()=>{
-                    document.getElementById('day').innerHTML = `Day ${day.whn}`;
+                    //document.getElementById('day').innerHTML = `Day ${day.whn}`;
                     fetch(`day/${day.whn}`)
                        .then(r=>r.json())
                        .then(r=>{
-                           let div = document.createElement('div');
-                           div.innerHTML = JSON.stringify(r);       //convert js object into JSON file
-                           document.getElementById('day').append(div);
+                        //    let div = document.createElement('div');
+                        //    div.innerHTML = JSON.stringify(r);       //convert js object into JSON file
+                        //    document.getElementById('day').append(div);
 
                             //show the selected seat
                             if (day.free !==0 )                                      //if free seats are not zero 

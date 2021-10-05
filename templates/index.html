@@ -32,21 +32,36 @@
                     </div>
                 </div>      <!--month-view div-->
 
+                <!-- form to enter number of adult and child  -->
+                
+                <form class="box">
+                    <div class="row">
+                         <div class="form-group col-sm-6">
+                            <label for="adult"> Adult : </label>
+                            <input type="text" class="form-control input-sm" id="adult" name="adult" placeholder="Enter No of Adult...">
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label for="child"> Child : </label>
+                            <input type="text" class="form-control input-sm" id="child" name="child" placeholder="Enter No of Child...">
+                        </div>
+                    </div>
+                </form> 
+
                 <!-- available and select times -->
                 <div id="asdiv" class="col-sm-4">
-            
-                    
+             
                     <p id='a'>
                         <!-- <span id="day-date"> </span>     for date eg. Tue, 19 Oct 2021 -->
-                        <span id="da"> day </span>
-                        <span id="mn"> month </span>
-                        <span id="te"> date </span>
-                        <span id="yn"> year </span>
+                        <span id="da"> </span>
+                        <span id="mn"> </span>
+                        <span id="te"> </span>
+                        <span id="yn"> </span>
                     </p>
                     <div id="times" class="table"> </div>
 
                 </div>      <!--asdiv div -->
             </div>          <!-- calender div -->
+            
             <div id=day></div>
         </div>   <!-- row div -->
         </div>   <!-- container fluid div -->
