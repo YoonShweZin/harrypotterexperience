@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from datetime import datetime, timedelta
 import json
 
@@ -36,5 +36,15 @@ def data(mnth):
 def date(date):
     t_slot = [x for x in all if x['whn'].startswith(date)]
     return {"availability":t_slot}      #return available seat with its date
+
+@app.route("/ticket/",methods=['GET'])
+def booking():
+    ticket_data = {                                  
+        "datetime" : request.args.get("datetime"),
+        "adult" : request.args.get("adultTicket"),   #get data from text box
+        "child" : request.args.get("childTicket")
+    }
+    print (ticket_data)
+    return render_template("ticket.html"), ticket_data
 
 app.run(debug=True, port=5568)
