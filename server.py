@@ -37,14 +37,13 @@ def date(date):
     t_slot = [x for x in all if x['whn'].startswith(date)]
     return {"availability":t_slot}      #return available seat with its date
 
-@app.route("/ticket/",methods=['GET'])
-def booking():
-    ticket_data = {                                  
-        "datetime" : request.args.get("datetime"),
-        "adult" : request.args.get("adultTicket"),   #get data from text box
-        "child" : request.args.get("childTicket")
-    }
-    print (ticket_data)
-    return render_template("ticket.html"), ticket_data
+@app.route("/ticket/",methods=['GET','POST'])
+def booking():                                
+    datetime = request.args.get("datetime")
+    time = request.args.get("time")
+    adult = request.args.get("adultTicket")   #get data from text box
+    child = request.args.get("childTicket")
+
+    return render_template("ticket.html", datetime = datetime, time = time, adult = adult, child = child)
 
 app.run(debug=True, port=5568)

@@ -105,6 +105,8 @@ function fillCalendarWithMonth(year,month)
                                 //if input value is null do something 
                                 adult = document.getElementById('adult').value;
                                 child = document.getElementById('child').value;
+                                time = r.availability[val]["whn"].split("T")[1];
+
                                 if ((adult.length) == 0 && (child.length == 0)){          //input NO is 0 show alert
                                     alert ("Enter number of Adult or Child!!");
                                 }
@@ -112,8 +114,7 @@ function fillCalendarWithMonth(year,month)
                                     inputField = document.querySelectorAll("input");
                                     inputs = Array.from(inputField).filter (input => input.value !== " ");
 
-                                    //datetime = r.availability[val]["whn"].split("T"); 
-                                    window.location.href = "/ticket/?datetime="+day.whn+"&adultTicket="+adult+"&childTicket="+child;
+                                    window.location.href = "/ticket/?datetime="+day.whn+"&time="+time+"&adultTicket="+adult+"&childTicket="+child;
                                 };
                             };
                         }; 
