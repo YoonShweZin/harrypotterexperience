@@ -110,10 +110,16 @@ function fillCalendarWithMonth(year,month)
                                 if ((adult.length) == 0 && (child.length == 0)){      //if input NO is 0(no input) show alert
                                     alert ("Enter number of Adult or Child!!");
                                 }
-                                else if((parseInt(adult) < 0)){                      //if adult input no is less then 0 mean (negative vaules)
+                                else if ((parseInt(adult) > 4)){                      //if adult input no is greater than 4
+                                    alert ("Can't be greater then 4");
+                                }
+                                else if((parseInt(child) >4)){
+                                    alert ("Can't be greater then 4")                 //if adult input no is greater than 4 
+                                }
+                                else if((parseInt(adult) < 0)){                       //if adult input no is less then 0 mean (negative vaules)
                                     alert ("Minus is invalid");
                                 }
-                                else if((parseInt(child) < 0)){                      //if adult input no is less then 0 mean (negative vaules)
+                                else if((parseInt(child) < 0)){                       //if adult input no is less then 0 mean (negative vaules)
                                     alert ("Minus is invalid");
                                 }
                                 else{                                   //check if all inputs are not empty with javascrip
