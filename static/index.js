@@ -107,10 +107,16 @@ function fillCalendarWithMonth(year,month)
                                 child = document.getElementById('child').value;
                                 time = r.availability[val]["whn"].split("T")[1];
 
-                                if ((adult.length) == 0 && (child.length == 0)){          //input NO is 0 show alert
+                                if ((adult.length) == 0 && (child.length == 0)){      //if input NO is 0(no input) show alert
                                     alert ("Enter number of Adult or Child!!");
                                 }
-                                else{                              //how to check if all inputs are not empty with javascrip
+                                else if((parseInt(adult) < 0)){                      //if adult input no is less then 0 mean (negative vaules)
+                                    alert ("Minus is invalid");
+                                }
+                                else if((parseInt(child) < 0)){                      //if adult input no is less then 0 mean (negative vaules)
+                                    alert ("Minus is invalid");
+                                }
+                                else{                                   //check if all inputs are not empty with javascrip
                                     inputField = document.querySelectorAll("input");
                                     inputs = Array.from(inputField).filter (input => input.value !== " ");
 
