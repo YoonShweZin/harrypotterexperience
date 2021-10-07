@@ -72,8 +72,7 @@ function fillCalendarWithMonth(year,month)
                             //show the selected seat
                             if (day.free !==0 )                                      //if free seats are not zero 
                             {
-                                let ava = document.querySelector('.arr-selected');  //select css class 
-                                if(ava){
+                                if(ava = document.querySelector('.arr-selected')){   //select css class 
                                     ava.classList.remove('arr-selected');          
                                 };
                                 td.classList.add('arr-selected');                 //create class to use in css
@@ -122,11 +121,19 @@ function fillCalendarWithMonth(year,month)
                                 else if((parseInt(child) < 0)){                       //if adult input no is less then 0 mean (negative vaules)
                                     alert ("Minus is invalid");
                                 }
+                                else if((parseInt(adult) == 0) && (parseInt(child) == 0)){     //if the value is 0
+                                    alert ("Zero really! At least buy one ticket.");
+                                }
                                 else{                                   //check if all inputs are not empty with javascrip
                                     inputField = document.querySelectorAll("input");
                                     inputs = Array.from(inputField).filter (input => input.value !== " ");
 
-                                    window.location.href = "/ticket/?datetime="+day.whn+"&time="+time+"&adultTicket="+adult+"&childTicket="+child;
+                                    //purchase ticket calculation
+                                    adultTicketprice = 40;
+                                    childTicketprice = 20;
+                                    ticketPrice = (adult * adultTicketprice) + (child * childTicketprice);
+
+                                    window.location.href = "/ticket/?datetime="+day.whn+"&time="+time+"&adultTicket="+adult+"&childTicket="+child+"&ticketPrice="+ticketPrice;
                                 };
                             };
                         }; 

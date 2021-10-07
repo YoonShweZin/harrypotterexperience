@@ -43,7 +43,8 @@ def booking():
     time = request.args.get("time")
     adult = request.args.get("adultTicket")   #get data from text box
     child = request.args.get("childTicket")
+    ticketPrice = request.args.get("ticketPrice")
 
-    return render_template("ticket.html", datetime = datetime, time = time, adult = adult, child = child)
+    return render_template("ticket.html", datetime = datetime, time = time, adult = adult, child = child, ticketPrice = ticketPrice)
 
 app.run(debug=True, port=5568)
