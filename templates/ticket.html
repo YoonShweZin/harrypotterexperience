@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Booking Ticket Confirmation</title>
+	<meta charset="utf-8">
+	<script src="static/index.js" defer></script>
+	<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>         
+</head>
+<style>
+	.container{
+		align-items: center;
+		justify-content: center;
+		display: flex;
+	}
+	#ticket{
+		width: 600px;
+		padding-bottom: 2ex;
+		background-color: whitesmoke;
+		text-align: center;
+		font-family: 'Times New Roman', Times, serif;
+		margin-top: 100px;
+		box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+	}
+
+	hr.design{
+		border-top: 3px double #a07855FF;
+	}
+
+	#info{
+		width: 180px;
+		/* background-color: deeppink; */
+		float: left;
+		text-align: left;
+		font-size: 20px;
+		font-weight: bold;
+	}
+	#data{
+		width: 180px;
+		float: left;
+		text-align: left;
+		font-size: 20px;
+	}
+
+	#tk{
+		width: 180px;
+		height: 70px;
+		float: right;
+		font-family: Brush Script MT, Brush Script Std, cursive;
+		color: #a07855FF;
+		font-size: 45px;
+		text-align: center;
+		margin-top: 120px;
+	}
+	#home{
+		width:110px;
+		background-color: #a07855FF;
+		font-size: 22px;
+		font-family: 'Times New Roman', Times, serif;
+		font-weight: bold;
+		text-align: center;
+		margin-top: 20px;
+		border-top-right-radius: 20px;
+		border-bottom-right-radius: 20px;
+	}
+	a{
+		color: whitesmoke;
+	}
+	a:hover{
+		color: #D4B996FF;
+		text-decoration: none;
+	}
+</style>
+<body>
+	<div id="home" class="col-sm-4">
+		<a href="http://127.0.0.1:5568/"> Home </a>
+	</div>
+	<div class="container"> <!--  bootstrap div-->
+		<div class="row">
+			<div id="ticket" class="col-sm-4" >
+				<h1>Harry Potter Experience<h1>
+				<h3>Confirmation Ticket</h3>
+				<hr class="design">
+				<div id="info" class="col-sm-4">
+					<p> Date : </p>
+					<p> Time : </p>
+					<p> No of Adult : </p>
+					<p> No of Child : </p>
+					<p> Ticket Prices : </p>
+				</div>
+				<div id="data" class="col-sm-4">
+					<p> {{datetime}}</p>
+					<p> {{time}}</p>
+					<p> {{adult}}</p>
+					<p> {{child}} </p>
+					<p> $ {{ticketPrice}} </p>
+				</div>
+				<div id="tk"> Thank You </div>
+			</div>
+		</div> <!--row div-->
+	</div> <!--container fluid div-->
+
+
+</body>
+</html>

@@ -129,8 +129,8 @@ function fillCalendarWithMonth(year,month)
                                     inputs = Array.from(inputField).filter (input => input.value !== " ");
 
                                     //purchase ticket calculation
-                                    adultTicketprice = 40;
-                                    childTicketprice = 20;
+                                    adultTicketprice = 80;
+                                    childTicketprice = 40;
                                     ticketPrice = (adult * adultTicketprice) + (child * childTicketprice);
 
                                     window.location.href = "/ticket/?datetime="+day.whn+"&time="+time+"&adultTicket="+adult+"&childTicket="+child+"&ticketPrice="+ticketPrice;
