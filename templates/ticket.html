@@ -80,7 +80,7 @@
 		border-top-right-radius: 20px;
 		border-bottom-right-radius: 20px;
 		font-family: 'Times New Roman', Times, serif;
-		font-size: 16px;
+		font-size: 17px;
 		text-align: center;
 		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 		z-index: 1;
@@ -110,6 +110,86 @@
 		border-bottom-right-radius: 20px;
 	}
 
+	/* contact us css */
+	.btn {
+		display: inline-block;
+		-webkit-transition: all linear 0.15s;
+		transition: all linear 0.15s;
+		font-size: 17px;
+	}
+
+	.popup-wrap {
+		width: 100%;
+		height: 100%;
+		display: none;
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		content: "";
+		background: rgba(0, 0, 0, 0.85);
+	}
+
+	.popup-box {
+		width: 600px;
+		height: 220px;
+		padding: 70px;
+		transform: translate(-50%, -50%) scale(0.5);
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.5);
+		border-radius: 3px;
+		background: whitesmoke;
+		padding-top: 0%;
+	}
+	.popup-box h2 {
+		color: #1a1a1a;
+		font-weight: bold;
+	}
+	.popup-box p {
+		color: #888;
+		text-align: left;
+		font-size: 17px;
+	}
+	.popup-box .close-btn {
+		width: 35px;
+		height: 35px;
+		display: inline-block;
+		position: fixed;
+		top: 10px;
+		right: 10px;
+		-webkit-transition: all ease 0.5s;
+		transition: all ease 0.5s;
+		border-radius: 1000px;
+		/* background: #a07855FF; */
+		text-align: center;
+		font-weight: bold;
+		text-decoration: none;
+		color: #a07855FF;;
+	}
+	/* .popup-box .close-btn:hover {
+		border-radius: 1000px;
+		-webkit-transform: rotate(180deg);
+		transform: rotate(180deg);
+	} */
+
+	.transform-in,
+	.transform-out {
+		display: block;
+		-webkit-transition: all ease 0.5s;
+		transition: all ease 0.5s;
+	}
+
+	.transform-in {
+		-webkit-transform: translate(-50%, -50%) scale(1);
+		transform: translate(-50%, -50%) scale(1);
+	}
+
+	.transform-out {
+		-webkit-transform: translate(-50%, -50%) scale(0.5);
+		transform: translate(-50%, -50%) scale(0.5);
+	}
+
 </style>
 <body>
 
@@ -120,7 +200,17 @@
 			<a href="#">
 				<input type='button' id="save" value='Save' onclick='download()' />
 			</a>
-			<a href="#">Link 3</a>
+			<a href="#" class="btn popup-btn">Address</a>
+			<div class="popup-wrap">
+				<div class="popup-box">
+				  <h2>Our Address</h2>
+				  <hr class="design">
+				  <p>Warner Bros. Studio Tour London, Studio Tour Drive</p> 
+				  <p>Leavesden, WD25 7LR</p>
+				  <p>+44 (0) 20 3427 7770 or at sales@wbsl.com. </p>
+				  <a class="close-btn popup-close" href="#">X</a>
+				</div>
+			  </div>
 		</div>
 	</div>
 
@@ -148,14 +238,36 @@
 			</div>
 		</div> <!--row div-->
 	</div> <!--container fluid div-->
-<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js">
+	<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script>
    let download = () => {
       html2canvas(document.querySelector('#ticket')).then(book => {
 		// Create a window object.
 		var win = window.open('', '', 'height=375,width=620'); // Open the window. Its a popup window.
-			win.document.body.append(book);           //write contents in the new window
+			win.document.body.append(book);
+			// win.document.write(div.outerHTML);     // Write contents in the new window.
+			// win.document.close();
+			// win.printDiv();       // Finally, print the contents.
       });
    }
+
+   //reference by https://codepen.io/SebKay/pen/lxAwv
+   	$(document).ready(function() {
+ 	$('.popup-btn').click(function(e) {
+    $('.popup-wrap').fadeIn(500);
+    $('.popup-box').removeClass('transform-out').addClass('transform-in');
+
+    e.preventDefault();
+  });
+
+  	$('.popup-close').click(function(e) {
+    $('.popup-wrap').fadeOut(500);
+    $('.popup-box').removeClass('transform-in').addClass('transform-out');
+
+    e.preventDefault();
+  });
+});
+
 </script>
 </body>
 </html>
