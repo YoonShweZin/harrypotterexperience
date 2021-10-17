@@ -121,6 +121,22 @@ function fillCalendarWithMonth(year,month)
                                 else if((parseInt(child) < 0)){                       //if adult input no is less then 0 mean (negative vaules)
                                     alert ("Minus is invalid");
                                 }
+                                                                //normally if the adult is 0 but the child no is empty it would go to booking page to prevent that from happening
+                                else if ((parseInt(adult)==0) || (parseInt(child) == " ")){         //if the adult is 0 but the child no is empty show alert
+                                    alert ("To buy ticket enter number.");
+                                }
+                                else if ((parseInt(adult)==" ") || (parseInt(child) == 0)){        //if the adult value is empty but the child no is 0 show alert
+                                    alert ("To buy ticket enter number.");
+                                }
+                                
+                                //normally if the adult is 0 but the child no is empty it would go to booking page to prevent that from happening
+                                else if ((parseInt(adult)==0) || (parseInt(child) == " ")){         //if the adult is 0 but the child no is empty show alert
+                                    alert ("To buy ticket enter number.");
+                                }
+                                else if ((parseInt(adult)==" ") || (parseInt(child) == 0)){        //if the adult value is empty but the child no is 0 show alert
+                                    alert ("To buy ticket enter number.");
+                                }
+
                                 else if((parseInt(adult) == 0) && (parseInt(child) == 0)){     //if the value is 0
                                     alert ("Zero really! At least buy one ticket.");
                                 }
