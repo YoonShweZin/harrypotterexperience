@@ -106,40 +106,22 @@ function fillCalendarWithMonth(year,month)
                                 child = document.getElementById('child').value;
                                 time = r.availability[val]["whn"].split("T")[1];
 
-                                if ((adult.length) == 0 && (child.length == 0)){      //if input NO is 0(no input) show alert
+                                if ((adult == "") && (child == "")){                      //if input NO is empty show alert
                                     alert ("Enter number of Adult or Child!!");
                                 }
-                                else if ((parseInt(adult) > 4)){                      //if adult input no is greater than 4
-                                    alert ("Can't be greater then 4");
+                                else if (parseInt(adult) > 4 || parseInt(child) > 4){    //if input no is greater than 4 show alert
+                                    alert("Dear Customer, we don't have ticket greater than 4.")
                                 }
-                                else if((parseInt(child) >4)){
-                                    alert ("Can't be greater then 4")                 //if adult input no is greater than 4 
+                                else if(parseInt(adult) < 0 || parseInt(child) < 0){    //if input no is less then 0 mean (negative vaules)
+                                    alert("You really don't want to buy : (")
                                 }
-                                else if((parseInt(adult) < 0)){                       //if adult input no is less then 0 mean (negative vaules)
-                                    alert ("Minus is invalid");
-                                }
-                                else if((parseInt(child) < 0)){                       //if adult input no is less then 0 mean (negative vaules)
-                                    alert ("Minus is invalid");
-                                }
-                                                                //normally if the adult is 0 but the child no is empty it would go to booking page to prevent that from happening
-                                else if ((parseInt(adult)==0) || (parseInt(child) == " ")){         //if the adult is 0 but the child no is empty show alert
-                                    alert ("To buy ticket enter number.");
-                                }
-                                else if ((parseInt(adult)==" ") || (parseInt(child) == 0)){        //if the adult value is empty but the child no is 0 show alert
-                                    alert ("To buy ticket enter number.");
-                                }
-                                
-                                //normally if the adult is 0 but the child no is empty it would go to booking page to prevent that from happening
-                                else if ((parseInt(adult)==0) || (parseInt(child) == " ")){         //if the adult is 0 but the child no is empty show alert
-                                    alert ("To buy ticket enter number.");
-                                }
-                                else if ((parseInt(adult)==" ") || (parseInt(child) == 0)){        //if the adult value is empty but the child no is 0 show alert
-                                    alert ("To buy ticket enter number.");
-                                }
+                                else if((parseInt(adult) == 0 || parseInt(child) == 0) && (adult == "" || child =="")){  //the value is one zero and one empty show alert
+                                    alert ("Zero really! At least buy one ticket.")
+                                }  
+                                else if(parseInt(adult) + parseInt(child) == 0){    //if both value are 0 show alert
+                                    alert ("OMG Only 0.");
+                                }                              
 
-                                else if((parseInt(adult) == 0) && (parseInt(child) == 0)){     //if the value is 0
-                                    alert ("Zero really! At least buy one ticket.");
-                                }
                                 else{                                   //check if all inputs are not empty with javascrip
                                     inputField = document.querySelectorAll("input");
                                     inputs = Array.from(inputField).filter (input => input.value !== " ");
