@@ -211,4 +211,5 @@ input{
 }
 input[type=text]:focus {
     border: 2px solid #D4B996FF;
+
 }
